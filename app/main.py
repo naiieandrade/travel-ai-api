@@ -5,8 +5,8 @@ from app.core.logging_config import configure_logging
 configure_logging()
 
 app = FastAPI(
-    title="Travel AI API",
-    description="API inteligente para classificação, geração e validação de roteiros de viagem.",
+    title="Polaris Travel AI API",
+    description="API inteligente para geração e validação de roteiros de viagem.",
     version="1.0.0"
 )
 
@@ -16,4 +16,4 @@ app.include_router(itinerary.router, prefix="/api/v1/itinerary", tags=["Itinerar
 
 @app.get("/")
 def root():
-    return {"message": "Travel AI API is running"}
+    return {"message": "Polaris Travel AI API is running"}

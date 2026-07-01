@@ -13,5 +13,5 @@ def classify_profile(
     request: TravelProfileRequest,
     _: str = Depends(validate_api_key)
 ):
-    logger.info("Classifying travel profile for preferences=%s", request.preferencias)
+    logger.info("Classificando o perfil de viagem por preferências=%s", request.preferencias)
     return classify_travel_profile(request)

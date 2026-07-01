@@ -19,7 +19,7 @@ def generate(
     request: ItineraryGenerateRequest,
     _: str = Depends(validate_api_key)
 ):
-    logger.info("Generating itinerary for destination=%s days=%s", request.destino, request.dias)
+    logger.info("Gerando itinerário para o destino=%s dias=%s", request.destino, request.dias)
     return generate_itinerary(request)
 
 
@@ -28,5 +28,5 @@ def validate(
     request: ItineraryValidateRequest,
     _: str = Depends(validate_api_key)
 ):
-    logger.info("Validating itinerary for destination=%s days=%s", request.destino, request.dias)
+    logger.info("Validando itinerário para o destino=%s dias=%s", request.destino, request.dias)
     return validate_itinerary(request)

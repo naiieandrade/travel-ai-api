@@ -40,8 +40,9 @@ Regras obrigatórias:
 Formato obrigatório:
 {{
   "destino": "{request.destino}",
-  "perfil": "{request.perfil}",
   "dias": {request.dias},
+  "perfil": "{request.perfil}",
+  "ritmo": "{request.ritmo}",
   "roteiro": [
     {{
       "dia": 1,
@@ -57,8 +58,9 @@ Formato obrigatório:
 
     return ItineraryGenerateResponse(
         destino=data["destino"],
-        perfil=data["perfil"],
         dias=data["dias"],
+        perfil=data["perfil"],
+        ritmo=data["ritmo"],
         roteiro=[DayPlan(**item) for item in data["roteiro"]]
     )
 
@@ -78,7 +80,8 @@ def generate_with_template(request: ItineraryGenerateRequest) -> ItineraryGenera
 
     return ItineraryGenerateResponse(
         destino=request.destino,
-        perfil=request.perfil,
         dias=request.dias,
+        perfil=request.perfil,
+        ritmo=request.ritmo,
         roteiro=roteiro
     )

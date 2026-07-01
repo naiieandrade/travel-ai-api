@@ -20,8 +20,9 @@ class DayPlan(BaseModel):
 
 class ItineraryGenerateResponse(BaseModel):
     destino: str
-    perfil: str
     dias: int
+    perfil: str
+    ritmo: str
     roteiro: List[DayPlan]
 
 
@@ -30,7 +31,7 @@ class ItineraryValidateRequest(BaseModel):
     dias: int = Field(..., ge=1, le=30, examples=[2])
     perfil: str = Field(..., examples=["aventura"])
     ritmo: str = Field(..., examples=["intenso"])
-    atividades: List[str] = Field(..., min_length=1)
+    roteiro: List[DayPlan] = Field(..., min_length=1)
 
 
 class ItineraryValidateResponse(BaseModel):

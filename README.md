@@ -48,12 +48,6 @@ Todos os endpoints principais exigem o header:
 X-API-Key: travel-api-key
 ```
 
-## Executar com Docker
-
-```bash
-docker build -t travel-ai-api .
-docker run -p 8000:8000 --env-file .env travel-ai-api
-```
 
 ## Executar testes
 

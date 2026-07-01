@@ -12,14 +12,20 @@ A API disponibiliza três serviços:
 2. Geração de roteiro personalizado
 3. Validação de viabilidade do roteiro
 
+## Equipe
+
+- [x] Camila Melo
+- [x] Naiara Andrade 
+
+
 ## Tecnologias
 
 - FastAPI
 - Pydantic
 - Uvicorn
 - Pytest
-- Docker
 - API Key
+- Ollama
 
 ## Como executar localmente
 

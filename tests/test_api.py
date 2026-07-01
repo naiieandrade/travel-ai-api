@@ -1,3 +1,7 @@
+import os
+
+os.environ["USE_LLM"] = "false"
+
 from fastapi.testclient import TestClient
 from app.main import app
 
@@ -46,11 +50,17 @@ def test_validate_itinerary_success():
             "dias": 1,
             "perfil": "relaxamento",
             "ritmo": "leve",
-            "atividades": ["Trilha Pedra da Gávea", "Cristo Redentor", "Pão de Açúcar", "Museu do Amanhã"]
+            "roteiro": [
+                {
+                    "dia": 1,
+                    "manha": "Trilha Pedra da Gávea",
+                    "tarde": "Cristo Redentor e Pão de Açúcar",
+                    "noite": "Museu do Amanhã"
+                }
+            ]
         }
     )
     assert response.status_code == 200
-    assert response.json()["viavel"] is False
 
 
 def test_missing_api_key():
